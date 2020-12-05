@@ -1,11 +1,10 @@
 package com.example.fortunecookie;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
 
@@ -19,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.textView);
         Button button = findViewById(R.id.button);
 
-        String fortune[] = {"The love of your life is right in front of your eyes.",
+        String[] fortune = {"The love of your life is right in front of your eyes.",
 
                 "Behind this fortune is the love of my life.",
 
@@ -34,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
                 "Your love life will soon be happy and harmonious."};
             Random random = new Random();
 
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    textView.setText(fortune[random.nextInt(fortune.length)]);
-                }
-            });
+            button.setOnClickListener(v -> textView.setText(fortune[random.nextInt(fortune.length)]));
     }
 }
